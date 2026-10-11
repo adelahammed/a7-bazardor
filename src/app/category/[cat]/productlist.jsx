@@ -26,7 +26,7 @@ const ProductList = ({ categorised }) => {
 
   if (categorised.length === 0) {
     return (
-      <div className="container mx-auto min-h-[80vh] p-8 text-center">
+      <div className="max-w-7xl mx-auto min-h-[80vh] p-8 text-center">
         <h2 className="text-xl font-bold">
           এই ক্যাটাগরিতে কোনো পণ্য পাওয়া যায়নি।
         </h2>
@@ -40,7 +40,7 @@ const ProductList = ({ categorised }) => {
     <div className="min-h-[80vh]">
       {/* Category Header */}
       <div className="bg-[#f0f4f1] flex items-center justify-center p-4 sm:p-6 md:p-8">
-        <div className="container mx-auto w-full rounded-2xl bg-white p-4 sm:p-6 shadow-sm flex items-center space-x-4 sm:space-x-6">
+        <div className="max-w-7xl mx-auto w-full rounded-2xl bg-white p-4 sm:p-6 shadow-sm flex items-center space-x-4 sm:space-x-6">
           <div className="flex-shrink-0">
             <div className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center">
               <span
@@ -66,7 +66,7 @@ const ProductList = ({ categorised }) => {
       </div>
 
       {/* Sorting */}
-      <div className="container mx-auto flex justify-end items-center gap-3 p-4">
+      <div className="max-w-7xl mx-auto flex justify-end items-center gap-3 p-4">
         <label htmlFor="sort" className="text-sm">
           সাজান
         </label>
@@ -84,7 +84,7 @@ const ProductList = ({ categorised }) => {
       </div>
 
       {/* Product Cards */}
-      <div className="container mx-auto grid grid-cols-1 gap-7 p-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 gap-7 p-4 md:grid-cols-2 lg:grid-cols-3">
         {sortedProducts.map((product) => (
           <Link key={product.id} href={`/products/${product.id}`}>
             <div className="w-full rounded-[24px] border border-[#dce6de] bg-[#fbfcfb] p-5 shadow-sm">

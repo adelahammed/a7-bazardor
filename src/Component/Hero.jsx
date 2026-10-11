@@ -6,7 +6,7 @@ const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
 const Hero = () => {
   return (
     <div className=" bg-[#f1f5f0] px-4 py-5 sm:px-8">
-      <div className="container mx-auto flex flex-col-reverse items-center justify-between gap-6 rounded-2xl border border-[#e3ebe4] bg-[#fbfcfb] px-6 py-6 sm:px-10 lg:flex-row lg:gap-10">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse items-center justify-between gap-6 rounded-2xl border border-[#e3ebe4] bg-[#fbfcfb] px-6 py-6 sm:px-10 lg:flex-row lg:gap-10">
         <div className="w-full flex-1">
           <span className="mb-2 inline-block rounded-full bg-[#e0f3e6] px-3 py-1 text-[10px] font-semibold text-[#168447]">
             <p className="text-xs text-green-900">{date}</p>

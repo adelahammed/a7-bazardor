@@ -40,8 +40,8 @@ const Navbar = () => {
   );
   return (
     <div className="bg-white">
-      <div className="container mx-auto">
-        <div className="navbar container mx-auto">
+      <div className="max-w-7xl mx-auto">
+        <div className="navbar max-w-7xl mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
