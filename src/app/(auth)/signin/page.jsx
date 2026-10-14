@@ -25,12 +25,10 @@ const signin = () => {
 
     if (data) {
       toast.success("Sign In successfull!");
-      console.log(data);
     }
 
     if (error) {
       toast.error("Something went error!");
-      console.log(error);
     }
   };
 

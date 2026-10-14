@@ -9,14 +9,19 @@ export async function proxy(request) {
   });
   const user = session?.user;
 
-  if (!user) {
+  const { pathname } = request.nextUrl;
+
+  if (pathname === "/profile" && !user) {
     return NextResponse.redirect(new URL("/signin", request.url));
   }
+
+  if ((pathname === "/signin" || pathname === "/signup") && user) {
+    return NextResponse.redirect(new URL("/profile", request.url));
+  }
+
+  return NextResponse.next();
 }
 
-// Alternatively, you can use a default export:
-// export default function proxy(request: NextRequest) { ... }
-
 export const config = {
-  matcher: ["/profile"],
+  matcher: ["/profile", "/signin", "/signup"],
 };

@@ -12,6 +12,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { redirect } from "next/navigation";
 
 const Signup = () => {
   const onSubmit = async (e) => {
@@ -26,12 +27,11 @@ const Signup = () => {
 
     if (data) {
       toast.success("Sign In successfull!");
-      console.log(data);
+      redirect("/");
     }
 
     if (error) {
       toast.error("Something went error!");
-      console.log(error);
     }
   };
 
@@ -220,7 +220,7 @@ const Signup = () => {
           <p className="w-full pt-1 text-center text-[11px] text-[#69736c]">
             অ্যাকাউন্ট আছে?{" "}
             <Link
-              href="/login"
+              href="/signin"
               className="font-medium text-[#078b40] hover:underline"
             >
               সাইন ইন করুন
