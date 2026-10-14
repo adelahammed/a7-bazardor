@@ -43,7 +43,7 @@ const page = async () => {
           <ProductCard props={limitPriceDecreased} />
         </div>
       </div>
-      <div className="max-w-7xl mx-auto pb-10">
+      <div className="max-w-7xl mx-auto pb-10" id="allproducts">
         <div className="">
           <p className="text-2xl pb-2 text-black font-bold">সব পণ্য</p>
           <ProductCard props={productData} />

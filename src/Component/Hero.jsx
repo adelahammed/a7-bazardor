@@ -16,14 +16,17 @@ const Hero = () => {
             আজকের বাজারের দাম এক নজরে
           </h1>
 
-          <p className="mt-3 max-w-xl text-xs leading-relaxed text-[#69736b]">
+          <p className="mt-3 pb-3 max-w-xl text-lg leading-relaxed text-[#69736b]">
             চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারের সর্বশেষ
             বিস্তারিত তথ্য, দ্রুত, সহজে-সর্বদা এবং নির্ভরযোগ্য থেকে আপডেট।
           </p>
 
-          <button className="mt-4 rounded-md bg-[#07883f] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-[#066f34]">
+          <a
+            href="#allproducts"
+            className="mt-4 rounded-md bg-[#07883f] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-[#066f34]"
+          >
             সব দাম দেখুন
-          </button>
+          </a>
         </div>
 
         <div className="flex w-full items-center justify-center lg:w-60">

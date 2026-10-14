@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import UserBlocks from "./UserBlocks";
 const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
 const getcategories = async () => {
   const res = await fetch(
@@ -41,7 +42,7 @@ const Navbar = () => {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="navbar max-w-7xl mx-auto">
+        <div className="navbar justify-between max-w-7xl mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -88,14 +89,7 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
-          <div className="navbar-end gap-6">
-            <Link href="/" className="btn border-0 bg-white">
-              সাইন ইন
-            </Link>
-            <Link href="/" className="btn text-white bg-[#05893E]">
-              সাইন আপ
-            </Link>
-          </div>
+          <UserBlocks />
         </div>
         <Navitems />
       </div>
