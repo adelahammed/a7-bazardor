@@ -41,10 +41,10 @@ const Navbar = () => {
   );
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="navbar justify-between max-w-7xl mx-auto">
-          <div className="navbar-start">
-            <div className="dropdown">
+      <div className="max-w-7xl px-4 sm:px-8  mx-auto">
+        <div className="navbar justify-between max-w-7xl mx-auto flex flex-col gap-5 items-start md:flex-row">
+          <div className="navbar-start max-sm:w-[100%]">
+            {/* <div className="dropdown">
               <div
                 tabIndex={0}
                 role="button"
@@ -80,9 +80,9 @@ const Navbar = () => {
                   </li>
                 ))}
               </div>
-            </div>
+            </div> */}
             <Link href="/" className="flex gap-3">
-              <Image alt="logo" src={logo} />
+              <Image alt="logo" className="max-sm:shrink-0" src={logo} />
               <div>
                 <p>বাজার দর</p>
                 <p className="text-xs text-neutral-500">{date}</p>

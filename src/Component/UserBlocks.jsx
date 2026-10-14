@@ -50,7 +50,7 @@ const UserBlocks = () => {
           </details>
         </div>
       ) : (
-        <div className="navbar-end gap-6">
+        <div className="gap-6">
           <Link href="/signin" className="btn border-0 bg-white">
             সাইন ইন
           </Link>

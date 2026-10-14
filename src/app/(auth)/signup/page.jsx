@@ -60,7 +60,7 @@ const Signup = () => {
         </p>
       </header>
 
-      <div className="w-full max-w-[340px] rounded-[14px] border border-[#e0e9e2] bg-[#fbfcfb] p-5">
+      <div className="w-full max-w-[420px] rounded-[14px] border border-[#e0e9e2] bg-[#fbfcfb] p-5">
         <Form
           className="flex w-full flex-col gap-3"
           render={(props) => <form {...props} data-custom="foo" />}
@@ -75,7 +75,7 @@ const Signup = () => {
             <Label className="text-xs font-medium text-[#303a33]">নাম</Label>
             <Input
               placeholder="আপনার পুরো নাম"
-              className="h-9 w-full rounded-[7px] border border-[#dfe8e1] bg-transparent px-3 text-xs outline-none focus:border-[#07883e] focus:ring-1 focus:ring-[#07883e]"
+              className="h-[42px] w-full rounded-lg border border-[#dce2e8] bg-[#fbfcfd] px-3 text-sm outline-none focus:border-[#078b40]"
             />
             <FieldError className="text-xs text-red-600" />
           </TextField>
@@ -84,7 +84,7 @@ const Signup = () => {
             <Label className="text-xs font-medium text-[#303a33]">ছবি</Label>
             <Input
               placeholder="আপনার ছবির লিংক দিন"
-              className="h-9 w-full rounded-[7px] border border-[#dfe8e1] bg-transparent px-3 text-xs outline-none focus:border-[#07883e] focus:ring-1 focus:ring-[#07883e]"
+              className="h-[42px] w-full rounded-lg border border-[#dce2e8] bg-[#fbfcfd] px-3 text-sm outline-none focus:border-[#078b40]"
             />
             <FieldError className="text-xs text-red-600" />
           </TextField>
@@ -103,7 +103,7 @@ const Signup = () => {
             <Label className="text-xs font-medium text-[#303a33]">ইমেইল</Label>
             <Input
               placeholder="you@example.com"
-              className="h-9 w-full rounded-[7px] border border-[#dfe8e1] bg-transparent px-3 text-xs outline-none focus:border-[#07883e] focus:ring-1 focus:ring-[#07883e]"
+              className="h-[42px] w-full rounded-lg border border-[#dce2e8] bg-[#fbfcfd] px-3 text-sm outline-none focus:border-[#078b40]"
             />
             <FieldError className="text-xs text-red-600" />
           </TextField>
@@ -132,7 +132,7 @@ const Signup = () => {
             </Label>
             <Input
               placeholder="পাসওয়ার্ড লিখুন"
-              className="h-9 w-full rounded-[7px] border border-[#dfe8e1] bg-transparent px-3 text-xs outline-none focus:border-[#07883e] focus:ring-1 focus:ring-[#07883e]"
+              className="h-[42px] w-full rounded-lg border border-[#dce2e8] bg-[#fbfcfd] px-3 text-sm outline-none focus:border-[#078b40]"
             />
             <Description className="text-[10px] text-[#78817a]">
               কমপক্ষে ৮ অক্ষর, ১টি বড় হাতের অক্ষর ও ১টি সংখ্যা
@@ -154,7 +154,7 @@ const Signup = () => {
             </Label>
             <Input
               placeholder="পাসওয়ার্ড আবার লিখুন"
-              className="h-9 w-full rounded-[7px] border border-[#dfe8e1] bg-transparent px-3 text-xs outline-none focus:border-[#07883e] focus:ring-1 focus:ring-[#07883e]"
+              className="h-[42px] w-full rounded-lg border border-[#dce2e8] bg-[#fbfcfd] px-3 text-sm outline-none focus:border-[#078b40]"
             />
             <FieldError className="text-xs text-red-600" />
           </TextField>
@@ -173,7 +173,7 @@ const Signup = () => {
             <div className="h-px flex-1 bg-[#dce4de]" />
           </div>
 
-          <div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-1">
+          <div className="flex w-full flex-row gap-2 max-sm:flex-col">
             <Button
               type="button"
               variant="secondary"

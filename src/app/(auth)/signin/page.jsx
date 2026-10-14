@@ -97,7 +97,7 @@ const signin = () => {
             <div className="h-px flex-1 bg-[#dce2e8]" />
           </div>
 
-          <div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-1">
+          <div className="flex w-full flex-row gap-2 max-sm:flex-col">
             <Button
               type="button"
               variant="secondary"

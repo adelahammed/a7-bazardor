@@ -27,7 +27,7 @@ const page = async () => {
       <Hero />
       <div className="max-w-7xl mx-auto pb-10">
         <div className="">
-          <p className="text-2xl pb-2 text-black font-bold">
+          <p className="text-2xl pb-2 text-black font-bold px-4 sm:px-8">
             <span className="text-red-700 text-lg">▲</span> আজ দাম বেড়েছে
           </p>
           <ProductCard props={limitPriceIncresed} />
@@ -36,7 +36,7 @@ const page = async () => {
 
       <div className="max-w-7xl mx-auto pb-10">
         <div className="">
-          <p className="text-2xl pb-2 text-black font-bold">
+          <p className="text-2xl pb-2 text-black font-bold px-4 sm:px-8">
             <span className="text-green-700 text-lg">▼</span> আজ দাম কমেছে
           </p>
 
@@ -45,7 +45,9 @@ const page = async () => {
       </div>
       <div className="max-w-7xl mx-auto pb-10" id="allproducts">
         <div className="">
-          <p className="text-2xl pb-2 text-black font-bold">সব পণ্য</p>
+          <p className="text-2xl pb-2 text-black font-bold px-4 sm:px-8">
+            সব পণ্য
+          </p>
           <ProductCard props={productData} />
         </div>
       </div>

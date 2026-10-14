@@ -7,9 +7,9 @@ const textBn = (text) => {
 
 const ProductCard = ({ props }) => {
   return (
-    <div>
+    <div className="px-4 sm:px-8">
       <p className="pb-5">{`মোট ${textBn(props.length)}টি পণ্য দেখানো হচ্ছে`}</p>
-      <div className="grid gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid  gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {props.map((product, ind) => (
           <Link key={ind} href={`/products/${product.id}`}>
             <div className="w-full rounded-[24px] border border-[#dce6de] bg-[#fbfcfb] p-5 shadow-sm">
