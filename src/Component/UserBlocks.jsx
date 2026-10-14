@@ -37,7 +37,9 @@ const UserBlocks = () => {
                 </div>
               </li>
               <li>
-                <button className="">👤 আমার প্রোফাইল</button>
+                <Link href="/profile">
+                  <button className="">👤 আমার প্রোফাইল</button>
+                </Link>
               </li>
               <li>
                 <button onClick={usersignout} className="text-red-700">

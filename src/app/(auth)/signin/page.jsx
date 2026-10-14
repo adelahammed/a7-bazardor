@@ -9,6 +9,7 @@ import {
   TextField,
   Button,
 } from "@heroui/react";
+import Link from "next/link";
 import toast from "react-hot-toast";
 
 const signin = () => {
@@ -33,14 +34,28 @@ const signin = () => {
     }
   };
 
+  const signInGoogle = async () => {
+    const data = await signIn.social({
+      provider: "google",
+    });
+    return data;
+  };
+
+  const signInGithub = async () => {
+    const data = await signIn.social({
+      provider: "github",
+    });
+    return data;
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center bg-[#f0f5f1] px-4 pt-10 text-[#172b24]">
+    <div className="flex min-h-screen flex-col items-center bg-[#f0f5f1] px-4 pt-10 text-[#172b24]">
       <h1 className="text-3xl font-bold">সাইন ইন</h1>
       <p className="mt-2 text-center text-sm text-[#718096]">
         বিস্তারিত দাম, বাজার মূল্য ও প্রোডাক্ট দেখতে অ্যাকাউন্টে ঢুকুন।
       </p>
 
-      <div className="mt-7 w-full max-w-[328px] rounded-2xl border border-[#e5e9e6] bg-white px-8 py-7 shadow-sm">
+      <div className="mt-7 w-full max-w-[420px] rounded-2xl border border-[#e5e9e6] bg-white px-8 py-7 shadow-sm">
         <Form onSubmit={onSubmit} className="flex flex-col gap-4">
           <TextField
             isRequired
@@ -84,12 +99,12 @@ const signin = () => {
             <div className="h-px flex-1 bg-[#dce2e8]" />
           </div>
 
-          <div className="grid w-full grid-cols-2 gap-2">
+          <div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-1">
             <Button
               type="button"
               variant="secondary"
-              className="flex h-9 items-center justify-center gap-1 rounded-[7px] border border-[#dfe8e1] bg-transparent px-1 text-[10px] font-medium text-[#29332c] hover:bg-[#f1f6f2]"
-              onPress={() => {}}
+              className="flex h-9 w-full items-center justify-center gap-1 rounded-[7px] border border-[#dfe8e1] bg-transparent px-1 text-[12px] font-bold text-[#29332c] hover:bg-[#f1f6f2]"
+              onClick={signInGoogle}
             >
               <svg viewBox="0 0 48 48" className="h-4 w-4 shrink-0">
                 <path
@@ -109,14 +124,14 @@ const signin = () => {
                   d="M24 12c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 5.9 29.5 4 24 4A20 20 0 0 0 5.8 15.1l6.8 5.3C14.2 15.6 18.7 12 24 12Z"
                 />
               </svg>
-              Google
+              Google দিয়ে চালিয়ে যান
             </Button>
 
             <Button
               type="button"
               variant="secondary"
-              className="flex h-9 items-center justify-center gap-1 rounded-[7px] border border-[#dfe8e1] bg-transparent px-1 text-[10px] font-medium text-[#29332c] hover:bg-[#f1f6f2]"
-              onPress={() => {}}
+              className="flex h-9 w-full items-center justify-center gap-1 rounded-[7px] border border-[#dfe8e1] bg-transparent px-1 text-[12px] font-bold text-[#29332c] hover:bg-[#f1f6f2]"
+              onClick={signInGithub}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -124,23 +139,26 @@ const signin = () => {
               >
                 <path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.8-5.5 6.1.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.1 11.1 0 0 0 12 .9Z" />
               </svg>
-              GitHub
+              GitHub দিয়ে চালিয়ে যান
             </Button>
           </div>
 
           <p className="text-center text-xs text-[#718096]">
             অ্যাকাউন্ট নেই?{" "}
-            <a href="/signup" className="font-semibold text-[#078b40]">
+            <Link href="/signup" className="font-semibold text-[#078b40]">
               সাইন আপ করুন
-            </a>
+            </Link>
           </p>
         </Form>
       </div>
 
-      <a href="/" className="mt-5 text-xs text-[#718096] hover:text-[#078b40]">
+      <Link
+        href="/"
+        className="mt-5 text-xs text-[#718096] hover:text-[#078b40]"
+      >
         ← হোম পেজে ফিরে যান
-      </a>
-    </main>
+      </Link>
+    </div>
   );
 };
 
