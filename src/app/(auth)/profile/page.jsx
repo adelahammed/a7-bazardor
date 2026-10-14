@@ -1,11 +1,10 @@
 "use client";
 import { signOut, updateUser, useSession } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 
 const Profile = () => {
-  const router = useRouter();
   const { data: session } = useSession();
   const user = session?.user;
 
@@ -28,13 +27,8 @@ const Profile = () => {
     }
   };
   const usersignout = async () => {
-    await signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          router.push("/signin");
-        },
-      },
-    });
+    await signOut();
+    redirect("/signin");
   };
 
   return (
