@@ -15,12 +15,19 @@ const page = async () => {
   const priceIncreased = productData.filter(
     (product) => product.change.dir === "up",
   );
-  const limitPriceIncresed = priceIncreased.slice(0, 6);
+  const sortPriceIncreased = priceIncreased.sort(
+    (a, b) => b.change.pct - a.change.pct,
+  );
+  const limitPriceIncresed = sortPriceIncreased.slice(0, 6);
 
   const priceDecreased = productData.filter(
     (product) => product.change.dir === "down",
   );
-  const limitPriceDecreased = priceDecreased.slice(0, 6);
+
+  const sortPriceDecreased = priceDecreased.sort(
+    (a, b) => a.change.pct - b.change.pct,
+  );
+  const limitPriceDecreased = sortPriceDecreased.slice(0, 6);
 
   return (
     <div>

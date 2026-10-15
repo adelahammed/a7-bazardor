@@ -28,6 +28,7 @@ const Profile = () => {
   };
   const usersignout = async () => {
     await signOut();
+    toast.success("Signout successfull!");
     redirect("/signin");
   };
 

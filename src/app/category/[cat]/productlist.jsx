@@ -20,16 +20,22 @@ const sortProducts = (products, sortBy) => {
 };
 
 const ProductList = ({ categorised }) => {
-  const [sortBy, setSortBy] = useState("lowtohigh");
+  const [sortBy, setSortBy] = useState("default");
 
   const sortedProducts = sortProducts(categorised, sortBy);
 
   if (categorised.length === 0) {
     return (
       <div className="max-w-7xl mx-auto min-h-[80vh] p-8 text-center">
-        <h2 className="text-xl font-bold">
+        <h2 className="text-xl font-bold text-red-600">
           এই ক্যাটাগরিতে কোনো পণ্য পাওয়া যায়নি।
         </h2>
+        <Link
+          href="/"
+          className="mt-5 text-[20px] text-[#818a83] hover:text-[#078b40]"
+        >
+          ← হোম পেজে ফিরে যান
+        </Link>
       </div>
     );
   }
@@ -77,6 +83,8 @@ const ProductList = ({ categorised }) => {
           onChange={(e) => setSortBy(e.target.value)}
           className="select rounded-2xl border border-[#dce6de] bg-white items-center justify-center max-w-[200px]"
         >
+          <option value="default">ডিফল্ট</option>
+
           <option value="lowtohigh">দাম কম থেকে বেশি</option>
 
           <option value="hightolow">দাম বেশি থেকে কম</option>
@@ -85,7 +93,7 @@ const ProductList = ({ categorised }) => {
 
       <div className="max-w-7xl px-4 sm:px-8 mx-auto grid grid-cols-1 gap-7 p-4 md:grid-cols-2 lg:grid-cols-3">
         {sortedProducts.map((product) => (
-          <Link key={product.id} href={`/products/${product.id}`}>
+          <Link key={product.id} href={`/product/${product.slug}`}>
             <div className="w-full rounded-[24px] border border-[#dce6de] bg-[#fbfcfb] p-5 shadow-sm">
               <div className="flex items-center gap-4">
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[18px] bg-[#f0f5f0] text-3xl">
@@ -114,16 +122,21 @@ const ProductList = ({ categorised }) => {
                 <div className="mb-0.5 flex items-center gap-1.5 rounded-full bg-[#f1f5f1] px-3 py-2">
                   <div
                     className={
-                      product.change.dir === "up"
+                      product.change.dir == "up"
                         ? "text-red-800"
-                        : "text-green-800"
+                        : product.change.dir == "down"
+                          ? "text-green-800"
+                          : "text-gray-600"
                     }
                   >
-                    <span className="text-sm">
-                      {product.change.dir === "up" ? "▲" : "▼"}
+                    <span className="text-sm ">
+                      {product.change.dir == "up"
+                        ? "▲"
+                        : product.change.dir == "down"
+                          ? "▼"
+                          : "‐"}
                     </span>
-
-                    <span className="ml-1 text-sm font-bold">
+                    <span className="text-sm font-bold ">
                       {textBn(product.change.pct)}
                     </span>
                   </div>

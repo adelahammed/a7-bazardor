@@ -11,7 +11,7 @@ const ProductCard = ({ props }) => {
       <p className="pb-5">{`মোট ${textBn(props.length)}টি পণ্য দেখানো হচ্ছে`}</p>
       <div className="grid  gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {props.map((product, ind) => (
-          <Link key={ind} href={`/products/${product.id}`}>
+          <Link key={ind} href={`/product/${product.slug}`}>
             <div className="w-full rounded-[24px] border border-[#dce6de] bg-[#fbfcfb] p-5 shadow-sm">
               <div className="flex items-center gap-4">
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[18px] bg-[#f0f5f0] text-3xl">
@@ -40,11 +40,17 @@ const ProductCard = ({ props }) => {
                     className={
                       product.change.dir == "up"
                         ? "text-red-800"
-                        : "text-green-800"
+                        : product.change.dir == "down"
+                          ? "text-green-800"
+                          : "text-gray-600"
                     }
                   >
                     <span className="text-sm ">
-                      {product.change.dir == "up" ? "▲" : "▼"}
+                      {product.change.dir == "up"
+                        ? "▲"
+                        : product.change.dir == "down"
+                          ? "▼"
+                          : "‐"}
                     </span>
                     <span className="text-sm font-bold ">
                       {textBn(product.change.pct)}

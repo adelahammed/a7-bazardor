@@ -3,6 +3,7 @@ import { signOut, useSession } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 
 const UserBlocks = () => {
   const { data: session } = useSession();
@@ -10,6 +11,7 @@ const UserBlocks = () => {
 
   const usersignout = async () => {
     await signOut();
+    toast.success("Signout successfull!");
     redirect("/");
   };
   return (

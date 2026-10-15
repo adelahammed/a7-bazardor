@@ -29,7 +29,11 @@ const Navbar = () => {
         <li key={ind}>
           <Link
             href={`/category/${cat.slug}`}
-            className={pathname === `/${cat.slug}` ? "font-bold" : ""}
+            className={
+              pathname === `/category/${cat.slug}`
+                ? "font-bold bg-gray-200"
+                : ""
+            }
           >
             <div className="flex gap-3 items-center">
               <span>{cat.icon}</span> {cat.nameBn}

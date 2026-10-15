@@ -18,7 +18,7 @@ const MarqueeScroll = async () => {
       <Marquee className=" bg-white border-y-1 border-gray-100">
         {productData.map((product, ind) => {
           return (
-            <Link key={ind} href={`/products/${product.id}`}>
+            <Link key={ind} href={`/product/${product.slug}`}>
               <div className="flex gap-1 items-center px-5 py-2 border-r-1 border-gray-100">
                 <div>{product.image}</div>
                 <div>{product.nameBn}</div>

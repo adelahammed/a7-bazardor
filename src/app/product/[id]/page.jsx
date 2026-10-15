@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -16,7 +15,9 @@ const textBn = (text) => {
 const page = async ({ params }) => {
   const { id } = await params;
   const productDetails = await getProductDetails();
-  const currentProduct = productDetails.find((product) => product.id == id);
+
+  const currentProduct = productDetails.find((product) => product.slug == id);
+
   const lowestPriceInMarket = Math.min(
     ...currentProduct.markets.map((min) => min.min),
   );
@@ -38,7 +39,7 @@ const page = async ({ params }) => {
           <span className="text-gray-400">&gt;</span>
 
           <span className="text-gray-900 font-medium">
-            <Link href={`/products/${currentProduct.id}`}>
+            <Link href={`/product/${currentProduct.slug}`}>
               {currentProduct.nameBn}
             </Link>
           </span>
