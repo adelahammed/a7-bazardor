@@ -83,6 +83,7 @@ const Profile = () => {
                 type="text"
                 id="name"
                 name="name"
+                required
                 className="h-[35px] mb-4 w-full rounded-lg border border-[#DFE7E0] bg-transparent px-3 outline-none focus:border-green-600"
               />
 
@@ -97,6 +98,7 @@ const Profile = () => {
                 type="text"
                 id="image"
                 name="image"
+                required
                 className="h-[35px] w-full rounded-lg border border-[#DFE7E0] bg-transparent px-3 outline-none focus:border-green-600"
               />
 

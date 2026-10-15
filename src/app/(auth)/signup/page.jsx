@@ -1,5 +1,5 @@
 "use client";
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import React from "react";
 import {
   Button,
@@ -36,9 +36,11 @@ const Signup = () => {
   };
 
   const signInGoogle = async () => {
-    const data = await signUp.social({
+    const data = await signIn.social({
       provider: "google",
     });
+    console.log(data);
+
     return data;
   };
 
