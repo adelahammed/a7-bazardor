@@ -45,7 +45,7 @@ const Signup = () => {
   };
 
   const signInGithub = async () => {
-    const data = await signUp.social({
+    const data = await signIn.social({
       provider: "github",
     });
     return data;
